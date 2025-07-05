@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.static{
+  
+border: 4px dashed;
+display: inline-block;
+
+position: static;
+
+}
+.relative{
+  
+border: 4px dashed;
+display: inline-block;
+
+
+
+}
+
+
+.absolute{
+  
+border: 4px dashed;
+display: inline-block;
+
+position: relative;
+
+}
+
+
+.items{
+    display: inline-block;
+    background-color: tomato;
+    padding: 80px;
+    font-size: 2em;
+}
+
+
+.items2, .itemsab , .itemsre{
+
+background-color: green;
+}
+
+
+.itemsre{
+    position: relative;
+    top: 20px;
+    left: 20px;
+
+
+}
+.itemsab{
+
+position:absolute;
+left: 25px;
+
+
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h3>position: static</h3>
+    <div class="static">
+<div class="items">One</div>
+<div class="items items2">Two</div>
+<div class="items">Three</div>
+<div class="items">Four</div>
+
+    </div>
+    <h3>position: relative</h3>
+    <div class="relative">
+<div class="items">One</div>
+<div class="items itemsre">Two</div>
+<div class="items">Three</div>
+<div class="items">Four</div>
+
+    </div>
+    <h3>position: absolute</h3>
+    <div class="absolute">
+<div class="items">One</div>
+<div class="items itemsab">Two</div>
+<div class="items">Three</div>
+<div class="items">Four</div>
+
+    </div>
+</body>
+</html>
