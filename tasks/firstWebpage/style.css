@@ -1,0 +1,124 @@
+*{
+ margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .cardbox, .us {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardone, .cardtwo, .cardthree, .cotactus, .aboutus {
+    width: 90%;
+  }
+}
+
+header{
+    background-image: url(https://images.pexels.com/photos/10876743/pexels-photo-10876743.jpeg);
+    background-size: cover;
+    background-position: center;
+     height: 300px;
+    color: white;
+     display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  width: 100%;
+
+}
+header >.welcome >h1{
+    color:white;
+    margin-bottom: 20px;
+    font-size: 2 rem;
+
+}
+header>.description>p{
+    color: white;
+    font-size: 1 rem;
+    margin-bottom: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+header>.ReadMore > a{
+    text-decoration: none;
+        color: white;
+        background-color: black;
+        padding: 15px;
+        border-radius: 15px;
+}
+header>.ReadMore > a:hover{
+    text-decoration: none;
+        color: rgb(111, 87, 87);
+        background-color: #eee;
+        padding: 15px;
+        border-radius: 15px;
+
+}
+.info1, .info2 {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  color: #1a1515;
+  text-align: center;
+   box-shadow:inset 3px 15px 15px 10px rgba(0, 0, 0, 0.1);
+  
+
+}
+.cardbox{
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 15px;
+
+}
+.cardone ,.cardtwo ,.cardthree{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+     width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+.cardone img ,.cardtwo img ,.cardthree img {
+      width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+
+}
+
+
+.us{
+    display: flex;
+    text-align: center;
+}
+.cotactus {
+    background-color: rgb(93, 126, 217);
+    color: white;
+    
+    
+}
+.aboutus {
+    background-color: rgb(24, 30, 49);
+    color: white;
+    
+    
+}
+.cotactus .email a,.aboutus .email a{
+    padding: 10px;
+    font-weight: bold;
+    color: aliceblue;
+    text-decoration: none;
+}
+footer{
+    background-color: rgb(22, 31, 32);
+    height: 50px;
+    text-align: center;
+    color: aliceblue;
+    align-content: center;
+}
