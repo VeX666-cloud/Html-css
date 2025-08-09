@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #onHover {
+            background-color: yellow;
+            border: 2px solid;
+            color: rgb(34, 84, 129);
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="onHover">Hello World !</h1>
+
+    <script>
+        const header = document.getElementById("onHover");
+        
+
+        header.addEventListener("mouseover", function() {
+            header.style.backgroundColor = "red";
+            header.innerHTML=" End  World"
+        });
+
+       
+        header.addEventListener("mouseout", function() {
+            header.style.backgroundColor = "yellow";
+            header.innerHTML="Hello World !"
+        });
+    </script>
+</body>
+</html>

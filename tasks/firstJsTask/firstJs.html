@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- zakat calculator -->
+    <div class="zakatcalc">
+      <h3>zakat calculator</h3>
+      <div>
+        <input type="number" id="zakat" placeholder="Enter The Amount" />
+        <p id="zakatpara">Your zakat is :</p>
+        <button onclick="calculateZakat()">Enter</button>
+      </div>
+    </div>
+    <!-- Array Tasks -->
+    <div>
+      <div id="taskOne">
+        <table id="mytable">
+          <tr>
+            <th><p>Correct the syntax error :</p></th>
+            <td>
+              <pre> <code>
+[ 1,7  9  45, ]                            hhh
+            </code>
+            </pre>
+            </td>
+            <td>
+              <pre> <code>
+["Str" "alex","moh"'the','fox' 'over' lazy, 'dog',  ]
+            </code>
+            </pre>
+            </td>
+          </tr>
+          <tr>
+            <th><p>The Correct syntax :</p></th>
+            <td>
+              <pre> <code>
+[ 1 , 7 , 9 , 45 ]
+                </code>
+                </pre>
+            </td>
+            <td>
+              <pre> <code>
+["Str" , "alex","moh" , 'the','fox' , 'over' , 'lazy', 'dog']
+                </code>
+                </pre>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="taskTwo">
+        <p>What the index of "Banana","Tomato"</p>
+        <pre> <code>
+var fruits=["Tomato","Banana","Watermelon"]
+                </code>
+                </pre>
+        <div id="taskTwoAns">
+          <pre>
+<strong>The Answer is : </strong> the index of "Banana" is <strong>1</strong> ,"Tomato" is <strong>0</strong>
+                  </pre>
+          <div>
+            <p>
+              to check you can try entering the index
+              <span id="index">
+                [
+                <input
+                  type="number"
+                  id="indexInput"
+                  placeholder="just give me an index"
+                />]</span
+              >
+            </p>
+            <button onclick="getElementByIndex()">What is the Element</button>
+          </div>
+        </div>
+      </div>
+
+       <div class="taskThree">
+        <div>
+          <p>Create an array represents your:</p>
+          <p>Favorite Food </p>
+          <pre> <code>
+  let  myFavFood = ["pizza" , "ramin","steak that my mom cooks (:" ]
+                </code>
+                </pre>
+        </div>
+        <div>
+          
+          <p>Favorite Sport </p>
+          <pre> <code>
+  let  myFavSports = ["chess" , "calisthenics","summing" ]
+                </code>
+                </pre>
+        </div>
+         <div>
+          
+          <p>Favorite Movie </p>
+          <pre> <code>
+  let  myFavMovie = ["Inception" , "The Great Gatsby","Kingdom of Heaven" ,"Interstellar" ]
+                </code>
+                </pre>
+        </div>
+      
+        </div>
+        <div class="TaskFour">
+<p><strong>Q 4 & 5:</strong> Return the first and last element in an array</p>
+
+<p>
+  Add element to your array
+  <span>
+    <input id="addedElement" type="text" />
+    <button onclick="addElement()">Add Element</button>
+  </span>
+</p>
+
+<p id="myArrayDisplay">let myArray = []</p>
+
+<button onclick="getFirstElement()">Get First Element</button>
+<button onclick="getLastElement()">Get Last Element</button>
+      <p id="sad"></p>
+
+      
+
+    <!-- zakat calculator -->
+    <script>
+      function calculateZakat() {
+        let x = document.getElementById("zakat").value;
+        x = Number(x);
+        let zakat = (2.5 * x) / 100;
+        document.getElementById("zakatpara").innerHTML =
+          "Your zakat is : " + zakat + " JO";
+      }
+    </script>
+    <!-- Array Tasks -->
+    <script>
+      function getElementByIndex() {
+        const fruits = ["Tomato", "Banana", "Watermelon"];
+        let x = document.getElementById("indexInput").value;
+        x = Number(x);
+        document.getElementById("index").innerHTML += " = " + fruits[x];
+      }
+    </script>
+     <!-- Array Tasks -->
+  <script>
+  const myArray = [];
+
+  function updateArrayDisplay() {
+    document.getElementById("myArrayDisplay").innerText =
+      "let myArray = [" + myArray.join(", ") + "]";
+  }
+
+  function addElement() {
+    const x = document.getElementById("addedElement").value;
+    if (x) {
+      myArray.push(x);
+      updateArrayDisplay();
+      document.getElementById("addedElement").value = ""; 
+    }
+  }
+
+  function getFirstElement() {
+    if (myArray.length > 0) {
+      document.getElementById("result").innerText = "First element: " + myArray[0];
+    } else {
+      document.getElementById("result").innerText = "Array is empty.";
+    }
+  }
+
+  function getLastElement() {
+    if (myArray.length > 0) {
+      document.getElementById("result").innerText = "Last element: " + myArray[myArray.length - 1];
+    } else {
+      document.getElementById("result").innerText = "Array is empty.";
+    }
+  }
+</script>
+<script>
+  let rows=10
+ 
+for(let i = 1 ; i<rows;i++){
+document.getElementById("sad").innerHTML +=`<br>`
+for(let j =1 ; j <i ; j++){
+document.getElementById("sad").innerHTML +=j 
+
+}
+
+}
+
+</script>
+<!-- array sorting using bubble sort  -->
+<script>
+function bubbleSort(arr){
+  let n = arr.length;
+  for (let i=0; i<n-1; i++){
+    for (let j=0; j<n-i-1; j++){
+      if(arr[j]>arr[j+1]){
+        let temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+    }
+}
+  }
+ return arr;
+}
+
+let array = [5,3,8,6,2]
+console.log("sorted Array ", bubbleSort(array));
+</script>
+  </body>
+
+</html>
