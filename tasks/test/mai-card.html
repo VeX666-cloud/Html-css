@@ -1,0 +1,93 @@
+<form id="form">
+  <label>Name:</label>
+  <input type="text" name="name"><br><br>
+
+  <label>Age:</label>
+  <input type="number" name="age"><br><br>
+
+  <label>Gender:</label>
+  <input type="text" name="gender"><br><br>
+
+  <label>Birth Date:</label>
+  <input type="date" name="birth"><br><br>
+
+  <label>Description:</label>
+  <input type="text" name="description"><br><br>
+
+  <label>Major & University:</label>
+  <input type="text" name="major"><br><br>
+
+  <label>Programming Languages:</label><br>
+  <input type="checkbox" name="languages" value="HTML"> HTML
+  <input type="checkbox" name="languages" value="CSS"> CSS
+  <input type="checkbox" name="languages" value="JS"> JavaScript
+  <br><br>
+
+  <label>Siblings Number:</label>
+  <input type="text" name="sib"><br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<div id="card"></div>
+
+<script>
+  const form = document.getElementById("form");
+  const card = document.getElementById("card");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Grab all data at once
+    const formData = new FormData(form);
+
+    // Turn into plain object
+    let data = {};
+    formData.forEach((value, key) => {
+      if (data[key]) {
+        if (!Array.isArray(data[key])) {
+          data[key] = [data[key]];
+        }
+        data[key].push(value);
+      } else {
+        data[key] = value;
+      }
+    });
+
+    // Save in localStorage
+    localStorage.setItem("formData", JSON.stringify(data));
+
+    // Show in card
+    card.innerHTML = `
+      <div class="card" style="padding:10px;border:1px solid black;max-width:300px;">
+        <h3>${data.name}</h3>
+        <p><b>Age:</b> ${data.age}</p>
+        <p><b>Gender:</b> ${data.gender}</p>
+        <p><b>Birth:</b> ${data.birth}</p>
+        <p><b>Description:</b> ${data.description}</p>
+        <p><b>Major:</b> ${data.major}</p>
+        <p><b>Languages:</b> ${data.languages ? data.languages : "None"}</p>
+        <p><b>Siblings:</b> ${data.sib}</p>
+      </div>
+    `;
+  });
+
+  // Load saved data on page reload
+  window.addEventListener("load", () => {
+    const saved = JSON.parse(localStorage.getItem("formData"));
+    if (saved) {
+      card.innerHTML = `
+        <div class="card">
+          <h3>${saved.name}</h3>
+          <p><b>Age:</b> ${saved.age}</p>
+          <p><b>Gender:</b> ${saved.gender}</p>
+          <p><b>Birth:</b> ${saved.birth}</p>
+          <p><b>Description:</b> ${saved.description}</p>
+          <p><b>Major:</b> ${saved.major}</p>
+          <p><b>Languages:</b> ${saved.languages ? saved.languages : "None"}</p>
+          <p><b>Siblings:</b> ${saved.sib}</p>
+        </div>
+      `;
+    }
+  });
+</script>

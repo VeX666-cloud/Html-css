@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+  <script>
+    function tellFortune(x, y, z,n){
+
+console.log(`You will be a ${x} in ${y} , and married to ${z} with ${n} kids.`)
+
+    }
+tellFortune('software engineer', 'Jordan', 'Alice', 3);
+
+function calculateDogAge(age){
+
+console.log(`Your doggie is ${age*7} years old in dog years!`)
+
+}
+
+calculateDogAge(2);
+
+function calculateSupply(age,rate){
+ age = ( 100 - age)*rate*365
+
+
+console.log(`You will need ${age} cups of tea to last you until the ripe old age of 100`)
+
+
+}
+calculateSupply(30,3);
+
+
+function  greet(name){
+    console.log(`Hello ${name}`)
+}
+greet("Adam");
+
+function cube(num){
+    console.log((num)**3)
+}
+cube(4);
+function multiply(x,a){
+let num = x*a;
+
+console.log(num)
+
+}
+multiply(2,5);
+
+function canIGetADrivingLicense(age){
+
+if(age >= 20){
+
+console.log("yes you can")
+
+}
+else{
+
+age = 20 - age
+
+
+console.log(`please come back after ${age} years to get one`);
+} 
+}
+canIGetADrivingLicense(21);
+
+function sameLength(str1,str2){
+
+if( str1.length === str2.length){
+    console.log("true")
+}
+else console.log("false");
+
+}
+ sameLength("car", "cats")
+
+function largerNubmer(num1 ,num2){
+
+    if(num1 > num2){
+
+        console.log(num1);
+    }
+    else if(num1 === num2){
+        console.log("they are equal")
+    }
+    else console.log(num2)
+
+
+
+}
+largerNubmer(11,1);
+
+
+function smallerNubmer(num1 ,num2,num3){
+
+  let nums = [num1 ,num2,num3];
+  let small = nums[0]
+  for(let i = 0; i<nums.length ; i++ ){
+
+
+   if( nums[i] < small){
+    
+small = nums[i]
+
+   }
+   
+  
+
+ 
+
+  }
+  console.log(small)
+
+}
+ smallerNubmer(1458,2499,3949);
+
+
+
+ function shorterString(str1,str2,str3,str4,str5){
+let strarry = [str1,str2,str3,str4,str5]
+let strSmaller 
+for(let i = 0 ; i<strarry.length; i++){
+
+    if(strarry[i].length < strarry[0].length){
+
+strSmaller = strarry[i]
+
+    }
+
+
+
+}
+
+console.log(strSmaller)
+}
+shorterString("cat","ff","car","red","aaaa")
+
+function longerString(str1,str2,str3,str4,str5){
+let strarry = [str1,str2,str3,str4,str5]
+let strSmaller 
+for(let i = 0 ; i < strarry.length; i++){
+
+   if(strarry[i].length >= strarry[0].length){
+
+strSmaller = strarry[i]
+
+   }
+
+
+
+
+
+}
+
+console.log(strSmaller)
+
+}
+
+longerString("assdddkj","fgggggggggggggggf","cagggggggggggggggggggg","rwwwwwwwwwwwwwwwwwwwwwwwf","ayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyya")
+function isEven(num){
+    if(num%2 === 0){
+        console.log("true")
+    }
+    else console.log("false")
+}
+isEven(30);
+
+function isOdd(num){
+    if(num%2 === 0){
+        console.log("false")
+    }
+    else console.log("true")
+}
+
+isOdd(3);
+
+function positive(num){
+
+if( num >=  0){
+    console.log(num)
+}
+
+else console.log(num*(-1))
+
+
+
+}
+positive(33)
+function fullName (str1,str2){
+
+console.log(str1 +" "+str2 )
+
+
+}
+fullName("car" , "car2")
+
+function average(str1,str2,str3,str4,str5){
+    let strarry = [str1,str2,str3,str4,str5]
+let sum = 0;
+for(let i = 0 ; i< strarry.length; i++ ){
+
+
+sum += strarry[i] 
+
+}
+let avg = sum / 5;
+console.log(avg)
+}
+average(5,4,0.5,0.5,999);
+
+function randomNumber(){
+
+
+ let ran = Math.random()
+console.log(ran)
+
+}
+
+randomNumber();
+
+function randomBetweenNumbers(num1,num2){
+
+
+    let ran = Math.floor( Math.random() * (num1 - num2) + num2)
+    console.log(ran)
+
+
+
+}
+
+ randomBetweenNumbers(5 ,10)
+function scoreInUniversty(score){
+
+if(score <= 49){
+
+    console.log("F")
+
+}
+else if (score >= 50 && score <= 69){
+    console.log("E")
+}
+else if(score >= 70 && score <= 84){
+    console.log("C")
+}
+else if(score >= 85 && score <= 94){
+    console.log("B")
+}
+else {
+    console.log("A")
+}
+
+
+
+
+
+}
+
+
+ scoreInUniversty(50)
+
+function counter(){
+
+let count = sessionStorage.getItem("counter") || 0;
+count = Number(count)
+
+count += 1;
+
+
+
+
+ console.log(count)
+sessionStorage.setItem("counter",count)
+
+}
+
+
+
+function resetCounter(){
+  let lastNum = sessionStorage.getItem("counter")
+  console.log(lastNum + " and the counter reset now")
+ sessionStorage.removeItem("counter")
+
+
+}
+
+ resetCounter();
+
+counter();
+counter();
+
+  </script>  
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><label for="select">chosse a flag to show it here</label>
+    <select name="" id="select">
+        <option value="" selected disabled hidden></option>
+        <option value="jo">jordan</option>
+        <option value="sy">syria</option>
+    </select>
+<div id="imag">
+    
+   
+</div>
+
+    <script>
+const select = document.getElementById("select")
+const img = document.getElementById("imag")
+select.addEventListener("change",function(){
+   const flag = this.value
+    if( flag === "jo"){
+        img.innerHTML =`
+        <img src="./Flag_of_Jordan.svg.png" alt="">
+        `
+
+    }
+    else{
+         img.innerHTML =`
+         <img src="./Flag_of_Syria_(2025-).svg.webp" alt="">
+        `
+    }
+
+
+
+})
+
+
+
+
+    </script>
+</body>
+</html>

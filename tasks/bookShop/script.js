@@ -8,21 +8,7 @@ const books = [
 
 let cart = [];
 
-document.addEventListener("DOMContentLoaded", function () {
-  const bookGrid = document.getElementById("bookGrid");
 
-  if (bookGrid) {
-    books.forEach(function (book) {
-      bookGrid.innerHTML +=
-        '<div class="book-card">' +
-        '<img src="' + book.image + '" alt="' + book.title + '">' +
-        '<h4>' + book.title + '</h4>' +
-        '<p>' + book.author + '</p>' +
-        '<p>$' + book.price + '</p>' +
-        '<button class="add-to-cart" data-id="' + book.id + '">Add to Cart</button>' +
-        '</div>';
-    });
-  }
 
   const logoutBtn = document.getElementById("logout");
   if (logoutBtn) {
@@ -36,6 +22,53 @@ document.addEventListener("DOMContentLoaded", function () {
     loginForm.addEventListener("submit", function (e) {
       e.preventDefault(); 
       window.location.href = "home.html";
+    });
+  }
+;
+document.addEventListener("DOMContentLoaded", function () {
+  const bookGrid = document.getElementById("bookGrid");
+
+  // Render books
+  if (bookGrid) {
+    books.forEach(function (book) {
+      bookGrid.innerHTML +=
+        `<div class="book-card">
+          <img src="${book.image}" alt="${book.title}">
+          <h4>${book.title}</h4>
+          <p>${book.author}</p>
+          <p>$${book.price}</p>
+          <button class="add-to-cart" data-id="${book.id}">Add to Cart</button>
+        </div>`;
+    });
+
+    // Add click listeners to each "Add to Cart" button
+    document.querySelectorAll(".add-to-cart").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const bookId = parseInt(this.getAttribute("data-id"));
+        const book = books.find(b => b.id === bookId);
+
+        if (book) {
+          cart.push(book);
+          updateCartUI();
+        }
+      });
+    });
+  }
+
+  // Cart display
+  function updateCartUI() {
+
+    const cartItems = document.getElementById("cartItems");
+    cartItems.innerHTML = ""; // clear old items
+
+    cart.forEach(function (book) {
+      cartItems.innerHTML +=
+        `<div class="book-card">
+          
+          <h4>${book.title}</h4>
+         
+          <p>$${book.price}</p>
+        </div>`;
     });
   }
 });

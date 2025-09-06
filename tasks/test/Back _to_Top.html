@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back to Top Example</title>
+  <style>
+    body {
+      height: 2000px; 
+      font-family: Arial, sans-serif;
+    }
+
+    #topBtn {
+      display: none; 
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: chocolate;
+      color: white;
+      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    #topBtn:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <button id="topBtn">Top</button>
+
+  <script>
+    const topBtn = document.getElementById("topBtn");
+
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+
+   
+    topBtn.addEventListener("click", function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+</body>
+</html>
